@@ -5,3 +5,108 @@ date: "March 8, 2015"
 output: html_document
 ---
 
+####Data Source Citation
+
+Anguita, D., Ghio, A., Oneto, L., Parra, X. and J. L. Reyes-Ortiz, 2013,
+<b>A Public Domain Dataset for Human Activity Recognition Using Smartphones.</b> 
+<i>21th European Symposium on Artificial Neural Networks, 
+Computational Intelligence and Machine Learning</i>, 
+ESANN 2013. Bruges, Belgium 24-26 April 2013.</p>
+
+####Data Background
+<i>(edited from the source web site description)</i></p>
+Experimental data was collected on a group of 30 volunteers from 19 to 48 years of age. 
+Each person performed six activities (WALKING, WALKING UPSTAIRS, WALKING DOWNSTAIRS, 
+SITTING, STANDING and LAYING) wearing a smartphone (Samsung Galaxy S II) on their waist.
+Using the smart phone's embedded accelerometer and gyroscope, we captured 3-axial linear
+acceleration and 3-axial angular velocity at a constant rate of 50Hz. The experiments were
+video-recorded to allow manual labeling of the activity. The resulting dataset was then
+randomly partitioned into two sets, where 70% of the volunteers was selected for generating
+the training data and 30% the test data. </p>
+
+The sensor signals (accelerometer and gyroscope) were preprocessed by applying noise 
+filters and then sampled in fixed-width sliding windows of 2.56 sec and 50% overlap 
+(128 readings at 50 Hz/window). The sensor acceleration signal, which has gravitational 
+and body motion components, was separated using a Butterworth low-pass filter into body 
+acceleration and gravity. Gravitational force is assumed to have only low frequency 
+components.  Therefore a filter with 0.3 Hz cutoff frequency was used. From each window,
+a vector of features was obtained by calculating variables from the time and frequency 
+domains. </p>
+
+<b>In the original data each record contained</b>:</br>
+- Triaxial acceleration from the accelerometer (total acceleration) and the estimated body acceleration. <br>
+- Triaxial Angular velocity from the gyroscope. <br>
+- A 561-feature vector with time and frequency domain variables. <br>
+- Its activity label. <br>
+- An identifier of the subject who carried out the experiment.</p>
+
+####Measurement Units
+Acceleration (Acc) measurements are in gravitational units (g) which is defined as 
+9.8067 m/s^2.  Change in acceleration (Jerk) is g/s (or m/s^3).  Angular velocities 
+(Gyro) are in radians per second. (Although this is not stated in the 
+docmentation, SI units are assumed and values seen in the data are reasonable.)</p>
+
+####More Detail on Data
+The features selected for this database come from the accelerometer and gyroscope 3-axial
+raw signals tAcc-XYZ and tGyro-XYZ. These time domain signals (prefix 't' to denote time)
+were captured at a constant rate of 50 Hz. Then they were filtered using a median filter
+and a 3rd order low pass Butterworth filter with a corner frequency of 20 Hz to remove
+noise. Similarly, the acceleration signal was then separated into body and gravity 
+acceleration signals (tBodyAcc-XYZ and tGravityAcc-XYZ) using another low pass Butterworth
+filter with a corner frequency of 0.3 Hz.</p> 
+
+Subsequently, the body linear acceleration and angular velocity were derived in time to
+obtain Jerk signals (tBodyAccJerk-XYZ and tBodyGyroJerk-XYZ). Also the magnitude of these
+three-dimensional signals were calculated using the Euclidean norm (tBodyAccMag,
+tGravityAccMag, tBodyAccJerkMag, tBodyGyroMag, tBodyGyroJerkMag). </p>
+
+Finally a Fast Fourier Transform (FFT) was applied to some of these signals producing
+fBodyAcc-XYZ, fBodyAccJerk-XYZ, fBodyGyro-XYZ, fBodyAccJerkMag, fBodyGyroMag, 
+fBodyGyroJerkMag. (Note the 'f' to indicate frequency domain signals). </p>
+
+####Project Subset
+
+For the purpose of this project, a subset of 60 variables were extracted from the 561
+features in the data. </p>
+
+Variable naming follows these rules: those prefixed 't' are time domain while those 
+prefixed 'f' are frequency domain. Most variables measure the subject movement component
+(Body) with one measurement of the component due to gravity (Gravity) '_XYZ' is used to
+denote 3-axial signals in the X, Y and Z directions which are recorded  in three variables
+respectively (e.g. tBodyAcc\_X, tBodyAcc\_Y, tBodyAcc\_Z). Only those variables 
+recording mean and standard deviation (std) were included for the following 
+variables:</p>  
+
+tBodyAcc_XYZ<br>
+tBodyAccJerk_XYZ<br>
+tBodyGyro_XYZ<br>
+tBodyGyroJerk_XYZ<br>
+tBodyAccMag<br>
+tGravityAccMag<br>
+tBodyAccJerkMag<br>
+tBodyGyroMag<br>
+tBodyGyroJerkMag<br>
+fBodyAcc_XYZ<br>
+fBodyAccJerk_XYZ<br>
+fBodyGyro_XYZ<br>
+fBodyAccMag<br>
+fBodyAccJerkMag<br>
+fBodyGyroMag<br>
+fBodyGyroJerkMag</p>
+
+There are no missing values or outside limits values in the data.</p>
+
+### Quality Control and Data Validation
+
+There is no discussion of accuracy and precision in the documentation included with
+the data.  A detailed discussion of the experiment and original data verification can
+be found in a thesis (Reyes Ortiz, 2014) located at http://www.tdx.cat/handle/10803/284725</p>
+No data validation was conducted in this project.</p>  Typical accelerometers
+used in wearable or handheld applications generate 12-bit measurements (see Freescale
+Semiconductor MMA8452Q used in Arduino compatible motion sensors).  That is equvalent 
+to 3 and a half digits of accuracy, significantly less digits than the data provided 
+here, which draws into question how many digits are significant.  Regardless, 12-bit
+accelerometers have been used successfully in motion studies and applications, but 
+fall short of the accuracy needed for gravity surveys.  At best, it would be possible 
+to detect the difference between the Earth's gravitational field at the equator and 
+the poles.
