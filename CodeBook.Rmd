@@ -66,21 +66,11 @@ observation was associated with a subject and an activity.  Each of the 30 subje
 was identified by an interger between 1 and 30. Each of the six activities was 
 identified by a text sring from </p>
 
----
-Field: "1" "2"
-Name: "subject" "object"
-Type: "categorical" "categorical"
-Range: "1 to 30" "WALKING, WALKING UPSTAIRS,"
----
-</p>
-
 Field | Name    |     Type    |   Range
 ------|---------|-------------|---------------------------------------------------------
  1    |subject  | categorical |  1 to 30
- 2    |activity | categorical |  WALKING, WALKING UPSTAIRS, WALKING DOWNSTAIRS, SITTING, 
+ 2    |activity | categorical |  WALKING, WALKING UPSTAIRS, WALKING DOWNSTAIRS, SITTING, STANDING and LAYING
  </p>
-                               STANDING and LAYING
-
 
 Variable naming follows these rules: those prefixed 't' are time domain while those 
 prefixed 'f' are frequency domain. Most variables measure the subject movement component
