@@ -153,7 +153,7 @@ the summary table for this project.  </p>
 
 ####Measurement Units
 Acceleration (Acc) measurements are in gravitational units (g) which is defined as 
-9.8067 m/s^2^.  Change in acceleration (Jerk) is g/s (or $m/s^3^$).  Angular velocities 
+9.8067 m/s^2^.  Change in acceleration (Jerk) is g/s (or m/s^3^).  Angular velocities 
 (Gyro) are in radians per second. (Although this is not stated in the 
 docmentation, SI units are assumed and values seen in the data are reasonable.)</p>
 
