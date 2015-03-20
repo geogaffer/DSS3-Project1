@@ -74,15 +74,13 @@ Range: "1 to 30" "WALKING, WALKING UPSTAIRS,"
 ---
 </p>
 
-------------------------------------------------------------
-Field  Name      Type          Range
------- --------- ------------- -----------------------------
- 1     subject   categorical   1 to 30
- 
- 2     activity  categorical   WALKING, WALKING UPSTAIRS, 
-                               WALKING DOWNSTAIRS, SITTING, 
+Field | Name    |     Type    |   Range
+------|---------|-------------|---------------------------------------------------------
+ 1    |subject  | categorical |  1 to 30
+ 2    |activity | categorical |  WALKING, WALKING UPSTAIRS, WALKING DOWNSTAIRS, SITTING, 
+ </p>
                                STANDING and LAYING
-------------------------------------------------------------                      
+
 
 Variable naming follows these rules: those prefixed 't' are time domain while those 
 prefixed 'f' are frequency domain. Most variables measure the subject movement component
