@@ -66,6 +66,14 @@ observation was associated with a subject and an activity.  Each of the 30 subje
 was identified by an interger between 1 and 30. Each of the six activities was 
 identified by a text sring from </p>
 
+---
+Field: "1" "2"
+Name: "subject" "object"
+Type: "categorical" "categorical"
+Range: "1 to 30" "WALKING, WALKING UPSTAIRS,"
+---
+</p>
+
 ------------------------------------------------------------
 Field  Name      Type          Range
 ------ --------- ------------- -----------------------------
@@ -166,7 +174,9 @@ docmentation, SI units are assumed and values seen in the data are reasonable.)<
 
 There is no discussion of accuracy and precision in the documentation included with
 the data.  A detailed discussion of the experiment and original data verification can
-be found in a thesis (Reyes Ortiz, 2014) located at http://www.tdx.cat/handle/10803/284725</p>
+be found in a thesis (Reyes Ortiz, 2014) located at 
+http://www.tdx.cat/handle/10803/284725</p>
+
 No data validation was conducted in this project.</p>  
 
 Typical accelerometers
