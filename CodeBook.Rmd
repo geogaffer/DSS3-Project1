@@ -77,8 +77,9 @@ prefixed 'f' are frequency domain. Most variables measure the subject movement c
 (Body) with one measurement of the component due to gravity (Gravity). 
 Axial signals in the X, Y and Z directions are recorded in variables tagged _X, _Y and _Z
 respectively (e.g. tBodyAcc\_X, tBodyAcc\_Y, tBodyAcc\_Z). Only those variables 
-recording mean and standard deviation (std) were included for the following 
-variables:</p>  
+recording mean and standard deviation (std) were selected from the 561 for this project.
+The three central columns (Old Field, Original Name and Cleaned Name) are stored in
+<i>keep featres.txt</i> which is used by the R code when building the project subset.  This was derived from <i>features_info.txt</i> which is provided with the data.</p>  
 
  New Fld | Old Fld | Original Name | Cleaned Name | Units
 ---|---|-------------------|----------------|--------------
