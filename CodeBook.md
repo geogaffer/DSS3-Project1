@@ -1,0 +1,173 @@
+
+####Data Source Citation
+
+Anguita, D., Ghio, A., Oneto, L., Parra, X. and J. L. Reyes-Ortiz, 2013,
+<b>A Public Domain Dataset for Human Activity Recognition Using Smartphones.</b> 
+<i>21th European Symposium on Artificial Neural Networks, 
+Computational Intelligence and Machine Learning</i>, 
+ESANN 2013. Bruges, Belgium 24-26 April 2013.</p>
+
+####Data Background
+<i>(edited from the source web site description)</i></p>
+Experimental data was collected on a group of 30 volunteers from 19 to 48 years of age. 
+Each person performed six activities (WALKING, WALKING UPSTAIRS, WALKING DOWNSTAIRS, 
+SITTING, STANDING and LAYING) wearing a smartphone (Samsung Galaxy S II) on their waist.
+Using the smart phone's embedded accelerometer and gyroscope, we captured 3-axial linear
+acceleration and 3-axial angular velocity at a constant rate of 50Hz. The experiments were
+video-recorded to allow manual labeling of the activity. The resulting dataset was then
+randomly partitioned into two sets, where 70% of the volunteers was selected for generating
+the training data and 30% the test data. </p>
+
+The sensor signals (accelerometer and gyroscope) were preprocessed by applying noise 
+filters and then sampled in fixed-width sliding windows of 2.56 sec and 50% overlap 
+(128 readings at 50 Hz/window). The sensor acceleration signal, which has gravitational 
+and body motion components, was separated using a Butterworth low-pass filter into body 
+acceleration and gravity. Gravitational force is assumed to have only low frequency 
+components.  Therefore a filter with 0.3 Hz cutoff frequency was used. From each window,
+a vector of features was obtained by calculating variables from the time and frequency 
+domains. </p>
+
+<b>In the original data each record contained</b>:</br>
+- Triaxial acceleration from the accelerometer (total acceleration) and the estimated body acceleration. <br>
+- Triaxial Angular velocity from the gyroscope. <br>
+- A 561-feature vector with time and frequency domain variables. <br>
+- Its activity label. <br>
+- An identifier of the subject who carried out the experiment.</p>
+
+####More Detail on Data
+The features selected for this database come from the accelerometer and gyroscope 3-axial
+raw signals tAcc-XYZ and tGyro-XYZ. These time domain signals (prefix 't' to denote time)
+were captured at a constant rate of 50 Hz. Then they were filtered using a median filter
+and a 3rd order low pass Butterworth filter with a corner frequency of 20 Hz to remove
+noise. Similarly, the acceleration signal was then separated into body and gravity 
+acceleration signals (tBodyAcc-XYZ and tGravityAcc-XYZ) using another low pass Butterworth
+filter with a corner frequency of 0.3 Hz.</p> 
+
+Subsequently, the body linear acceleration and angular velocity were derived in time to
+obtain Jerk signals (tBodyAccJerk-XYZ and tBodyGyroJerk-XYZ). Also the magnitude of these
+three-dimensional signals were calculated using the Euclidean norm (tBodyAccMag,
+tGravityAccMag, tBodyAccJerkMag, tBodyGyroMag, tBodyGyroJerkMag). </p>
+
+Finally a Fast Fourier Transform (FFT) was applied to some of these signals producing
+fBodyAcc-XYZ, fBodyAccJerk-XYZ, fBodyGyro-XYZ, fBodyAccJerkMag, fBodyGyroMag, 
+fBodyGyroJerkMag. (Note the 'f' to indicate frequency domain signals). </p>
+
+####Project Subset
+
+For the purpose of this project, a subset of 60 variables were extracted from the 561
+features in the full set of 10,299 observations. No observations were dropped.  Each 
+observation was associated with a subject and an activity.  Each of the 30 subjects 
+was identified by an interger between 1 and 30. Each of the six activities was 
+identified by a text sring describing the activity. </p>
+
+Field | Name    |     Type    |   Range
+------|---------|-------------|---------------------------------------------------------
+ 1    |subject  | categorical |  1 to 30
+ 2    |activity | categorical |  WALKING, WALKING UPSTAIRS, WALKING DOWNSTAIRS, SITTING, STANDING and LAYING
+ </p>
+
+Variable naming follows these rules: those prefixed 't' are time domain while those 
+prefixed 'f' are frequency domain. Most variables measure the subject movement component
+(Body) with one measurement of the component due to gravity (Gravity). 
+Axial signals in the X, Y and Z directions are recorded in variables tagged _X, _Y and _Z
+respectively (e.g. tBodyAcc\_X, tBodyAcc\_Y, tBodyAcc\_Z). Only those variables 
+recording mean and standard deviation (std) were selected from the 561 for this project.
+The three central columns (Old Field, Original Name and Cleaned Name) are stored in
+<i>keep featres.txt</i> which is used by the R code when building the project subset.  This was derived from <i>features_info.txt</i> which is provided with the data.</p>  
+
+ New Fld | Old Fld | Original Name | Cleaned Name | Units
+---|---|-------------------|----------------|--------------
+ 1 | 1 | tBodyAcc-mean()-X | tBodyAcc_Xmean | g (or m/s^2^)
+ 2 | 2 | tBodyAcc-mean()-Y | tBodyAcc_Ymean | g (or m/s^2^)
+ 3 | 3 | tBodyAcc-mean()-Z | tBodyAcc_Zmean | g (or m/s^2^)
+ 4 | 4 | tBodyAcc-std()-X | tBodyAcc_Xstd | g (or m/s^2^)
+ 5 | 5 | tBodyAcc-std()-Y | tBodyAcc_Ystd | g (or m/s^2^)
+ 6 | 6 | tBodyAcc-std()-Z | tBodyAcc_Zstd | g (or m/s^2^)
+ 7 | 81 | tBodyAccJerk-mean()-X | tBodyAccJerk_Xmean | g/s (or m/s^3^)
+ 8 | 82 | tBodyAccJerk-mean()-Y | tBodyAccJerk_Ymean | g/s (or m/s^3^)
+ 9 | 83 | tBodyAccJerk-mean()-Z | tBodyAccJerk_Zmean | g/s (or m/s^3^)
+10 | 84 | tBodyAccJerk-std()-X | tBodyAccJerk_Xstd | g/s (or m/s^3^)
+11 | 85 | tBodyAccJerk-std()-Y | tBodyAccJerk_Ystd | g/s (or m/s^3^)
+12 | 86 | tBodyAccJerk-std()-Z | tBodyAccJerk_Zstd | g/s (or m/s^3^)
+13 | 121 | tBodyGyro-mean()-X | tBodyGyro_Xmean | rad/s
+14 | 122 | tBodyGyro-mean()-Y | tBodyGyro_Ymean | rad/s
+15 | 123 | tBodyGyro-mean()-Z | tBodyGyro_Zmean | rad/s
+16 | 124 | tBodyGyro-std()-X | tBodyGyro_Xstd | rad/s
+17 | 125 | tBodyGyro-std()-Y | tBodyGyro_Ystd | rad/s
+18 | 126 | tBodyGyro-std()-Z | tBodyGyro_Zstd | rad/s
+19 | 161 | tBodyGyroJerk-mean()-X | tBodyGyroJerk_Xmean | rad/s^2^
+20 | 162 | tBodyGyroJerk-mean()-Y | tBodyGyroJerk_Ymean | rad/s^2^
+21 | 163 | tBodyGyroJerk-mean()-Z | tBodyGyroJerk_Zmean | rad/s^2^
+22 | 164 | tBodyGyroJerk-std()-X | tBodyGyroJerk_Xstd | rad/s^2^
+23 | 165 | tBodyGyroJerk-std()-Y | tBodyGyroJerk_Ystd | rad/s^2^
+24 | 166 | tBodyGyroJerk-std()-Z | tBodyGyroJerk_Zstd | rad/s^2^
+25 | 201 | tBodyAccMag-mean() | tBodyAccMag_mean | g (or m/s^2^)
+26 | 202 | tBodyAccMag-std() | tBodyAccMag_std | g (or m/s^2^)
+27 | 214 | tGravityAccMag-mean() | tGravityAccMag_mean | g (or m/s^2^)
+28 | 215 | tGravityAccMag-std() | tGravityAccMag_std | g (or m/s^2^)
+29 | 227 | tBodyAccJerkMag-mean() | tBodyAccJerkMag_mean | g/s (or m/s^3^)
+30 | 228 | tBodyAccJerkMag-std() | tBodyAccJerkMag_std | g/s (or m/s^3^)
+31 | 240 | tBodyGyroMag-mean() | tBodyGyroMag_mean | rad/s
+32 | 241 | tBodyGyroMag-std() | tBodyGyroMag_std | rad/s
+33 | 253 | tBodyGyroJerkMag-mean() | tBodyGyroJerkMag_mean | g/s (or m/s^3^)
+34 | 254 | tBodyGyroJerkMag-std() | tBodyGyroJerkMag_std | g/s (or m/s^3^)
+35 | 266 | fBodyAcc-mean()-X | fBodyAcc_Xmean | g (or m/s^2^)
+36 | 267 | fBodyAcc-mean()-Y | fBodyAcc_Ymean | g (or m/s^2^)
+37 | 268 | fBodyAcc-mean()-Z | fBodyAcc_Zmean | g (or m/s^2^)
+38 | 269 | fBodyAcc-std()-X | fBodyAcc_Xstd | g (or m/s^2^)
+39 | 270 | fBodyAcc-std()-Y | fBodyAcc_Ystd | g (or m/s^2^)
+40 | 271 | fBodyAcc-std()-Z | fBodyAcc_Zstd | g (or m/s^2^)
+41 | 345 | fBodyAccJerk-mean()-X | fBodyAccJerk_Xmean | g/s (or m/s^3^)
+42 | 346 | fBodyAccJerk-mean()-Y | fBodyAccJerk_Ymean | g/s (or m/s^3^)
+43 | 347 | fBodyAccJerk-mean()-Z | fBodyAccJerk_Zmean | g/s (or m/s^3^)
+44 | 348 | fBodyAccJerk-std()-X | fBodyAccJerk_Xstd | g/s (or m/s^3^)
+45 | 349 | fBodyAccJerk-std()-Y | fBodyAccJerk_Ystd | g/s (or m/s^3^)
+46 | 350 | fBodyAccJerk-std()-Z | fBodyAccJerk_Zstd | g/s (or m/s^3^)
+47 | 424 | fBodyGyro-mean()-X | fBodyGyro_Xmean | rad/s
+48 | 425 | fBodyGyro-mean()-Y | fBodyGyro_Ymean | rad/s
+49 | 426 | fBodyGyro-mean()-Z | fBodyGyro_Zmean | rad/s
+50 | 427 | fBodyGyro-std()-X | fBodyGyro_Xstd | rad/s
+51 | 428 | fBodyGyro-std()-Y | fBodyGyro_Ystd | rad/s
+52 | 429 | fBodyGyro-std()-Z | fBodyGyro_Zstd | rad/s
+53 | 503 | fBodyAccMag-mean() | fBodyAccMag_mean | g (or m/s^2^)
+54 | 504 | fBodyAccMag-std() | fBodyAccMag_std | g (or m/s^2^)
+55 | 516 | fBodyBodyAccJerkMag-mean() | fBodyBodyAccJerkMag_mean | g/s (or m/s^3^)
+56 | 517 | fBodyBodyAccJerkMag-std() | fBodyBodyAccJerkMag_std | g/s (or m/s^3^)
+57 | 529 | fBodyBodyGyroMag-mean() | fBodyBodyGyroMag_mean | rad/s
+58 | 530 | fBodyBodyGyroMag-std() | fBodyBodyGyroMag_std | rad/s
+59 | 542 | fBodyBodyGyroJerkMag-mean() | fBodyBodyGyroJerkMag_mean | rad/s^2^
+60 | 543 | fBodyBodyGyroJerkMag-std() | fBodyBodyGyroJerkMag_std | rad/s^2^
+</p>
+
+All of the variables are represented as floating point numbers.</p>
+
+There are no missing values or outside limits values in the data.</p>
+
+No additional filtering or processing was performed on the data prior to calculating
+the summary table for this project.  </p>
+
+####Measurement Units
+Acceleration (Acc) measurements are in gravitational units (g) which is defined as 
+9.8067 m/s^2^.  Change in acceleration (Jerk) is g/s (or m/s^3^).  Angular velocities 
+(Gyro) are in radians per second. (Although this is not stated in the 
+docmentation, SI units are assumed and values seen in the data are reasonable.)</p>
+
+
+### Quality Control and Data Validation
+
+There is no discussion of accuracy and precision in the documentation included with
+the data.  A detailed discussion of the experiment and original data verification can
+be found in a thesis (Reyes Ortiz, 2014) located at 
+http://www.tdx.cat/handle/10803/284725</p>
+
+No data validation was conducted in this project.</p>  
+
+Typical accelerometers
+used in wearable or handheld applications generate 12-bit measurements (see Freescale
+Semiconductor MMA8452Q used in Arduino compatible motion sensors).  That is equvalent 
+to 3 and a half digits of accuracy, significantly less digits than the data provided 
+here, which draws into question how many digits are significant.  Regardless, 12-bit
+accelerometers have been used successfully in motion studies and applications, but 
+fall short of the accuracy needed for gravity surveys.  At best, it would be possible 
+to detect the difference between the Earth's gravitational field at the equator and 
+the poles.
