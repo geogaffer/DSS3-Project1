@@ -1,9 +1,3 @@
----
-title: "Code Book"
-author: "John Harrop"
-date: "March 8, 2015"
-output: html_document
----
 
 ####Data Source Citation
 
@@ -66,6 +60,8 @@ observation was associated with a subject and an activity.  Each of the 30 subje
 was identified by an interger between 1 and 30. Each of the six activities was 
 identified by a text sring describing the activity. </p>
 
+<b>Table 1: Columns describing case parameters for each observation set</b></p>
+
 Field | Name    |     Type    |   Range
 ------|---------|-------------|---------------------------------------------------------
  1    |subject  | categorical |  1 to 30
@@ -80,6 +76,8 @@ respectively (e.g. tBodyAcc\_X, tBodyAcc\_Y, tBodyAcc\_Z). Only those variables
 recording mean and standard deviation (std) were selected from the 561 for this project.
 The three central columns (Old Field, Original Name and Cleaned Name) are stored in
 <i>keep featres.txt</i> which is used by the R code when building the project subset.  This was derived from <i>features_info.txt</i> which is provided with the data.</p>  
+
+<b>Table 2: Columns of mean and standard deviation measurements</b></p>
 
  New Fld | Old Fld | Original Name | Cleaned Name | Units
 ---|---|-------------------|----------------|--------------
